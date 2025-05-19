@@ -6,7 +6,7 @@ import math
 
 def main_f(x):
     # use the functions below to construct an elementary function that will be passed to main
-    return sin(sin(x))
+    return exp(-0.5 * poly(x, 2))
 
 def poly(x, p):
     return pow(x, p)

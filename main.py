@@ -1,5 +1,6 @@
 import random
 import math
+import time
 from functions import main_f
 
 if __name__ == "__main__":
@@ -24,6 +25,7 @@ if __name__ == "__main__":
     below = 0
     total = 0
     resolution = int(input("Number of points to sample: "))
+    start = time.time()
     print("Computing...")
     for i in range(0, resolution):
         rand_x = random.uniform(lower_bound, upper_bound)
@@ -32,9 +34,10 @@ if __name__ == "__main__":
         if rand_y <= main_f(rand_x):
             below += 1
         total += 1
-
+    end = time.time()
     a_ratio = (below / total) * r_area
     print(f'Approximate area = {a_ratio}')
+    print(f'Time taken = {"{:.2f}".format(end-start)}s')
 
 
 
